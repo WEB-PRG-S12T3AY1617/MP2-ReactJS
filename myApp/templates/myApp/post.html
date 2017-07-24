@@ -1,0 +1,6 @@
+<h1> {{post.username}} </h1>
+<div>
+    {% for count in post.item_name_set.all %}
+        {{count.item_name}}
+    {% endfor %}
+</div>

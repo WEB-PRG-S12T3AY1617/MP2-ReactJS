@@ -1,0 +1,147 @@
+header {
+    background-color: #AED6F1;
+    color: white;
+    height: 10%;
+    align-items: center;
+    display: flex;
+    font-size: 25pt;
+    font-family: Futura;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding-left: 41.5%;
+    font-weight: bold;
+    border-style: 2px solid;
+    border-bottom-style: ridge;  
+}
+
+body{
+     background-image: url("Images/wallpaper.jpg");   
+}
+
+a{
+    border-bottom: 1px solid black;
+    color: dimgray;
+}
+
+#logo{
+    height: 60px;
+    width: 60px;
+    position: relative;
+    padding-right: 3%;
+}
+
+
+#profile{
+    height: 15%;
+    background-color: black;
+    position: relative;
+    top: 10.5%;
+    align-items: center;
+    color: white;
+   
+}
+
+#name{
+    font-family: Futura;
+    font-size: 23pt;
+    padding-left: 7.5%;
+    padding-top: 1%;
+    color: white;
+}
+
+#degorofc{
+    font-family: Futura;
+    font-size: 16pt;
+    padding-left: 7.5%;
+    color: white;
+}
+
+#post_container{
+    width: 225px;
+    height: 275px;
+    background-color: black;
+    display: inline-block;
+    position: relative;
+    bottom: 150;
+    left: 6%;
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    border-radius: 18px;
+    padding: 3px;
+}
+
+#thumbnail img{
+    height: 165px;
+    width: 180px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+}
+
+#item_name{
+    font-size: 17pt;
+    font-family: Futura;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+    
+}
+
+#tags{
+    font-size: 14pt;
+    font-style: oblique;
+     color: white;
+}
+
+
+#recent{
+    position: relative;
+    top: 7.5%;
+    left: 10%;
+    font-size: 18pt;
+    width: 80%;
+    border-bottom: 5px solid black;
+}
+
+#morebtn{
+    background-color: black;
+    margin-left: 42.5%;
+    display: block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 20px;
+    font-family: Helvetica;
+    color:  #fbfcfc;
+    bottom: 0;
+    left: 70;
+    position: fixed;
+}
+
+#posts{
+    top: 30%;
+    position: relative;
+}
+
+#all_posts{
+    top: 30%;
+    position: relative;
+}
+
+#back{
+    position: relative;
+    top: 68;
+    color: black;
+    font-size: 20pt;
+}
+
+
+
+
+

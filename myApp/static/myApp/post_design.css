@@ -1,0 +1,156 @@
+header {
+    background-color: #AED6F1;
+    color: white;
+    height: 10%;
+    align-items: center;
+    display: flex;
+    font-size: 25pt;
+    font-family: Futura;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding-left: 41.5%;
+    font-weight: bold;
+    border-style: 2px solid;
+    border-bottom-style: ridge;  
+}
+
+a{
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+body{
+    background-image: url("Images/wallpaper.jpg");
+}
+
+#logo{
+    height: 60px;
+    width: 60px;
+    position: relative;
+    padding-right: 3%;
+}
+
+#top{
+    background-color: #AED6F1;
+    color: white;
+    height: 10%;
+    align-items: center;
+    display: flex;
+    font-size: 25pt;
+    font-family: Futura;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding-left: 41.5%;
+    font-weight: bold;
+    border-style: 2px solid;
+    border-bottom-style: ridge;  
+}
+
+#post_container{
+    width: 250px;
+    height: 275px;
+    background-color: black;
+    display: inline-block;
+    position: relative;
+    top: 30;
+    left: 1%;
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    border-radius: 25px;
+}
+
+#thumbnail img{
+    height: 190px;
+    width: 210px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+}
+
+#item_name{
+    font-size: 17pt;
+    font-style: italic;
+    font-family: Futura;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+}
+
+#tags{
+    font-size: 14pt;
+    font-style: oblique;
+    color: white;
+}
+
+#recent{
+    font-family: Futura;
+    position: relative;
+    top: 8%;
+    padding-left: 3%;
+    font-size: 50pt;
+    width: ;
+    border-bottom: 5px solid black;
+}
+
+#dropdown{
+    position: absolute;
+    top: 22.5%;
+    right: 3%;
+    width: 180px;
+    height: 40px;
+}
+
+select:hover {
+    color: dimgray;
+}
+
+#morebtn{
+    background-color: black;
+    margin-left: 42.5%;
+    display: block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 20px;
+    font-family: Helvetica;
+    color:  #fbfcfc;
+    bottom: -100;
+    left: 50;
+    position: relative;
+    padding-top: 4px;
+}
+
+
+#control{
+    position:inherit;
+}
+
+#home{
+    position:absolute;
+}
+
+#register, #login{
+    background-color: black;
+    margin-left: 42.5%;
+    display: block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 20px;
+    font-family: Helvetica;
+    color:  #fbfcfc;
+    bottom: 1;
+    left: 350;
+    position: relative;
+    padding-top: 3px;
+}

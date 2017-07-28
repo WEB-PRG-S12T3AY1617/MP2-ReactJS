@@ -1,0 +1,28 @@
+<html>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'myApp/details_design.css' %}"/>
+    <link rel="icon" href="{% static 'myApp/logo.png' %}" type="image/ico">
+    <header> <img src="{% static 'myApp/Images/logo.png' %}" id="logo"> PigeonBox </header>
+    <body>
+        <div id="back">
+              <a href="javascript:history.back()"> ⏎ Back </a>
+        </div>
+      
+        <div class='main' style="width:280px; margin:0 auto;">
+            <div id="post_container">
+            <div id="item_name">{{item.item_name}} </div>
+            <div id="thumbnail"> <img src="{{item.image.url}}" type="image/ico"></div>
+            <div id="tags"> Tags: {{item.tags}} </div>
+            <div id="details">
+                <div> Quantity:{{item.quantity}}</div>
+                <div> Condition: <a href="filter/condition/{{item.condition}}"> {{item.condition}}</a>/10</div>
+                <div> Type: <a href="filter/type/{{item.type1}}"> {{item.get_type1_display}} </a></div>
+                <div id="username"> by <a href="user/{{item.username.pk}}"> {{item.username}} </a></div>
+            </div>
+        
+        </div>
+        </div>
+    </body>
+    
+</html>
+    

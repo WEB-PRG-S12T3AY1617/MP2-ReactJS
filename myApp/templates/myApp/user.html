@@ -1,1 +1,46 @@
-{{user}}
+<html>
+    {% load static %}
+    <script src="{% static 'myApp/profile.js' %}"> </script>
+    <link rel="stylesheet" type="text/css" href="{% static 'myApp/profile_design.css' %}"/>
+    <link rel="icon" href="{% static 'myApp/logo.png' %}" type="image/ico">
+     <header> <img src="{% static 'myApp/images/logo.png' %}" id="logo"> PigeonBox </header>
+    <body>
+       {% load staticfiles %}
+       
+       <div id="back">
+           <a href="javascript:history.back()"> ⏎ Back </a> 
+       </div>
+       <div id="profile">
+           <div id="name">  {{user.name}} </div>
+           <div id="degorofc"> <i> {{user.Degree_Program_or_Office}} </i> </div>
+       </div> 
+        
+        <p id="recent"> Recent Posts </p>
+        
+        <div id= "posts">
+        {% for post in  post|slice:":5" %}
+            <div id="post_container">
+            <div id="item_name"> {{post.item_name}} </div>
+                <div id="thumbnail"> <a href="/myApp/user/{{user.pk}}/item/{{post.pk}}"> <img src="{{post.image.url}}"> </a> </div>
+            <div id="tags"> {{post.tags}} </div>
+           
+            </div>
+         {% endfor %}
+        </div>
+        
+        <div id="all_posts" >
+              {% for post in  post %}
+            <div id="post_container">
+            <div id="item_name"> {{post.item_name}} </div>
+                <div id="thumbnail"> <a href="/myApp/user/{{user.pk}}/item/{{post.pk}}"> <img src="{{post.image.url}}"> </a> </div>
+            <div id="tags"> {{post.tags}} </div>
+          
+            </div>
+         {% endfor %}
+        </div>
+        
+        <button id="morebtn" onclick="viewPosts()"> See all posts </button>
+    
+       
+    </body>
+</html>

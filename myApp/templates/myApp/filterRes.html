@@ -1,0 +1,36 @@
+<html>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'myApp/post_design.css' %}"/>
+    <link rel="icon" href="{% static 'myApp/logo.png' %}" type="image/ico">
+    <header>   <img src="{% static 'myApp/Images/logo.png' %}" id="logo"> PigeonBox 
+    </header>
+    <body>
+        {% load staticfiles %}
+        
+      
+        
+        <div id="control">
+            <button id="login"> Login </button>
+            <button id="register"> Register </button>
+        </div>
+               
+        <form action="index" method="post">
+            <select id="dropdown">
+                <option value="10"> View by 10 posts</option>
+                <option value="15"> View by 15 posts</option>
+                <option value="20"> View by 20 posts</option>
+            </select>
+        </form>
+
+        {% for item in item_list %}
+        <div id="post_container">
+            <div id="item_name"> {{item.item_name}} </div>
+            <div id="thumbnail"> <a href="{{item.pk}}"><img src="{{item.image.url}}" type="image/ico"></a></div>
+            <div id="tags"> {{item.tags}} </div> 
+            <div id="username">by <a href="/myApp/user/{{item.username.pk}}">{{item.username}} </a> </div>
+        </div>
+        {% endfor %}
+        
+        <button id="morebtn"> See more posts </button>
+    </body>
+</html>

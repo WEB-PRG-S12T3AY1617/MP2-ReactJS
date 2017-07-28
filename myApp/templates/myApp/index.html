@@ -1,4 +1,93 @@
-<a href="{% url 'myApp:post' post.id %}">
-    {{post.username}}
-    {{post.item_name}}
-</a>
+<html>
+    {% load static %}
+    <script src="{% static 'myApp/post.js' %}"> </script>
+    <link rel="stylesheet" type="text/css" href="{% static 'myApp/post_design.css' %}"/>
+    <link rel="icon" href="{% static 'myApp/logo.png' %}" type="image/ico">
+    <header>   
+        <img src="{% static 'myApp/Images/logo.png' %}" id="logo"> 
+        PigeonBox 
+        <h1><a href="/myApp/register/"><button id="register">Register</button></a></h1>
+        <h1><a href="/myApp/register/"><button id="login">Log In</button></a></h1>
+    </header>
+    <body>
+        {% load staticfiles %}
+        <p id="recent"> Recent Posts </p> 
+        
+        <form action="index" method="post">
+            <select id="dropdown" onchange="view()">
+                <option value="10"> View by 10 posts</option>
+                <option value="15"> View by 15 posts</option>
+                <option value="20"> View by 20 posts</option>
+            </select>
+        </form>
+        
+        <div id="posts_10">
+            {% for item in latest_post|slice:":10" %}
+            <div id="post_container">
+                <div id="item_name"> {{item.item_name}} </div>
+                <div id="thumbnail"> <a href="/myApp/item/{{item.pk}}"><img src="{{item.image.url}}" type="image/ico"></a></div>
+                <div id="tags"> {{item.tags}} </div>
+                <div id="username">by <a href="/myApp/user/{{item.username.pk}}">{{item.username}} </a> </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div id="posts_15">
+            {% for item in latest_post|slice:":15" %}
+            <div id="post_container">
+                <div id="item_name"> {{item.item_name}} </div>
+                <div id="thumbnail"> <a href="/myApp/item/{{item.pk}}"><img src="{{item.image.url}}" type="image/ico"></a></div>
+                <div id="tags"> {{item.tags}} </div>
+                <div id="username">by <a href="/myApp/user/{{item.username.pk}}">{{item.username}} </a> </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div id="posts_20">
+            {% for item in latest_post|slice:":20" %}
+            <div id="post_container">
+                <div id="item_name"> {{item.item_name}} </div>
+                <div id="thumbnail"> <a href="/myApp/item/{{item.pk}}"><img src="{{item.image.url}}" type="image/ico"></a></div>
+                <div id="tags"> {{item.tags}} </div>
+                <div id="username">by <a href="/myApp/user/{{item.username.pk}}">{{item.username}} </a> </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div id="morePosts_10">
+            {% for item in latest_post|slice:"10:+=10" %}
+            <div id="post_container">
+                <div id="item_name"> {{item.item_name}} </div>
+                <div id="thumbnail"> <a href="/myApp/item/{{item.pk}}"><img src="{{item.image.url}}" type="image/ico"></a></div>
+                <div id="tags"> {{item.tags}} </div>
+                <div id="username">by <a href="/myApp/user/{{item.username.pk}}">{{item.username}} </a> </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div id="morePosts_15">
+            {% for item in latest_post|slice:"15:+=15" %}
+            <div id="post_container">
+                <div id="item_name"> {{item.item_name}} </div>
+                <div id="thumbnail"> <a href="/myApp/item/{{item.pk}}"><img src="{{item.image.url}}" type="image/ico"></a></div>
+                <div id="tags"> {{item.tags}} </div>
+                <div id="username">by <a href="/myApp/user/{{item.username.pk}}">{{item.username}} </a> </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div id="morePosts_20">
+            {% for item in latest_post|slice:":+=20" %}
+            <div id="post_container">
+                <div id="item_name"> {{item.item_name}} </div>
+                <div id="thumbnail"> <a href="/myApp/item/{{item.pk}}"><img src="{{item.image.url}}" type="image/ico"></a></div>
+                <div id="tags"> {{item.tags}} </div>
+                <div id="username">by <a href="/myApp/user/{{item.username.pk}}">{{item.username}} </a> </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        
+        <button id="morebtn" onclick=viewMore() > See more posts </button>
+    </body>
+</html>

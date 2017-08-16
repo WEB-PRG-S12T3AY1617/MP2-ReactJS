@@ -1,9 +1,15 @@
-{% block title %}Log In{% endblock %}
-{% block login_active %}active{% endblock %}
+<html>
+{% load staticfiles %}
+    <header>
+        <a href="/myApp/">NewBeginnings</a> 
+        <title> Log In </title>
+    </header>
+    
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'myApp/login.css' %}">
 
-{% block body %}
+
 <div class="container-fluid">
-
     <div class="row">
         <div class="col-sm-12 col-md-6">
             <div class="panel panel-default">
@@ -45,5 +51,6 @@
     </div>
 
 </div>
-
-{% endblock %}
+    
+</html>   
+    

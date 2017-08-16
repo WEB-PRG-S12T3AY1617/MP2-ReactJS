@@ -2,17 +2,19 @@
     {% load static %}
     <script src="{% static 'myApp/post.js' %}"> </script>
     <link rel="stylesheet" type="text/css" href="{% static 'myApp/post_design.css' %}"/>
-    <link rel="icon" href="{% static 'myApp/logo.png' %}" type="image/ico">
-    <header>   
-        <img src="{% static 'myApp/Images/logo.png' %}" id="logo"> 
-        PigeonBox 
-        <h1><a href="/myApp/register/"><button id="register">Register</button></a></h1>
-        <h1><a href="/myApp/login/"><button id="login">Log In</button></a></h1>
+    <header> 
+        NewBeginnings 
+        {% if user.is_authenticated %}
+        <h1 id="user_index">Hello, <a href ="/myApp/user/{{user.pk}}">{{user.first_name}} </a></h1>
+            <h1><a href="/myApp/upload/"><button id="uploadbtn">+Upload</button></a></h1>
+            <h1><a href="/myApp/logout/">  <button class="logout"> Logout</button></a></h1>
+        {% else %}
+            <h1><a href="/myApp/register/"><button class="register">Register</button></a></h1>
+            <h1><a href="/myApp/login/"><button class="login">Log In</button></a></h1>
+        {% endif %}
     </header>
     <body>
         {% load staticfiles %}
-        <p id="recent"> Recent Posts </p> 
-        
         <form action="index" method="post">
             <select id="dropdown" onchange="view()">
                 <option value="10"> View by 10 posts</option>
@@ -27,7 +29,10 @@
                 <div id="item_name"> {{item.item_name}} </div>
                 <div id="thumbnail"> <a href="/myApp/item/{{item.pk}}"><img src="{{item.image.url}}" type="image/ico"></a></div>
                 <div id="tags"> {{item.tags}} </div>
-                <div id="username">by <a href="/myApp/user/{{item.username.pk}}">{{item.username}} </a> </div>
+                <div id="username">by <a href="/myApp/user/{{item.username.pk}}"> {{item.username}} </a> </div>
+                <div id="makeOffer">
+                     <a href="myApp/offer/?post={{item.pk}}" class="btn btn-block btn-primary" id="offerbtn">Make an offer</a>
+                </div>
             </div>
             {% endfor %}
         </div>
@@ -38,7 +43,10 @@
                 <div id="item_name"> {{item.item_name}} </div>
                 <div id="thumbnail"> <a href="/myApp/item/{{item.pk}}"><img src="{{item.image.url}}" type="image/ico"></a></div>
                 <div id="tags"> {{item.tags}} </div>
-                <div id="username">by <a href="/myApp/user/{{item.username.pk}}">{{item.username}} </a> </div>
+                <div id="username">by <a href="/myApp/user/{{item.username.pk}}"> {{item.username}} </a> </div>
+                <div id="makeOffer">
+                     <a href="myApp/offer/?post={{item.pk}}" class="btn btn-block btn-primary" id="offerbtn">Make an offer</a>
+                </div>
             </div>
             {% endfor %}
         </div>
@@ -50,6 +58,9 @@
                 <div id="thumbnail"> <a href="/myApp/item/{{item.pk}}"><img src="{{item.image.url}}" type="image/ico"></a></div>
                 <div id="tags"> {{item.tags}} </div>
                 <div id="username">by <a href="/myApp/user/{{item.username.pk}}">{{item.username}} </a> </div>
+                <div id="makeOffer">
+                     <a href="myApp/offer/?post={{item.pk}}" class="btn btn-block btn-primary" id="offerbtn">Make an offer</a>
+                </div>
             </div>
             {% endfor %}
         </div>
@@ -61,6 +72,9 @@
                 <div id="thumbnail"> <a href="/myApp/item/{{item.pk}}"><img src="{{item.image.url}}" type="image/ico"></a></div>
                 <div id="tags"> {{item.tags}} </div>
                 <div id="username">by <a href="/myApp/user/{{item.username.pk}}">{{item.username}} </a> </div>
+                <div id="makeOffer">
+                     <a href="myApp/offer/?post={{item.pk}}" class="btn btn-block btn-primary" id="offerbtn">Make an offer</a>
+                </div>
             </div>
             {% endfor %}
         </div>
@@ -72,6 +86,9 @@
                 <div id="thumbnail"> <a href="/myApp/item/{{item.pk}}"><img src="{{item.image.url}}" type="image/ico"></a></div>
                 <div id="tags"> {{item.tags}} </div>
                 <div id="username">by <a href="/myApp/user/{{item.username.pk}}">{{item.username}} </a> </div>
+                <div id="makeOffer">
+                     <a href="myApp/offer/?post={{item.pk}}" class="btn btn-block btn-primary" id="offerbtn">Make an offer</a>
+                </div>
             </div>
             {% endfor %}
         </div>
@@ -83,11 +100,15 @@
                 <div id="thumbnail"> <a href="/myApp/item/{{item.pk}}"><img src="{{item.image.url}}" type="image/ico"></a></div>
                 <div id="tags"> {{item.tags}} </div>
                 <div id="username">by <a href="/myApp/user/{{item.username.pk}}">{{item.username}} </a> </div>
+                <div id="makeOffer">
+                     <a href="myApp/offer/?post={{item.pk}}" class="btn btn-block btn-primary" id="offerbtn">Make an offer</a>
+                </div>
             </div>
             {% endfor %}
         </div>
         
-        
-        <button id="morebtn" onclick=viewMore() > See more posts </button>
     </body>
+    <footer>
+        <button id="morebtn" onclick=viewMore() > See more posts </button>
+    </footer>
 </html>

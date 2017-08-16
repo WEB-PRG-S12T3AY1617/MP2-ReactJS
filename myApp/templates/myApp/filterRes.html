@@ -2,7 +2,15 @@
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'myApp/post_design.css' %}"/>
     <link rel="icon" href="{% static 'myApp/logo.png' %}" type="image/ico">
-    <header>   <img src="{% static 'myApp/Images/logo.png' %}" id="logo"> PigeonBox 
+    <header> 
+        <a href="/myApp/"> NewBeginnings </a> 
+        {% if user.is_authenticated %}
+            <h1 id="user_index"> Hello, {{user.first_name}} </h1>
+            <h1> <a href="/myApp/logout/">  <button class="logout"> Logout</button></a></h1>
+        {% else %}
+            <h1><a href="/myApp/register/"><button class="register">Register</button></a></h1>
+            <h1><a href="/myApp/login/"><button class="login">Log In</button></a></h1>
+        {% endif %}
     </header>
     <body>
         {% load staticfiles %}

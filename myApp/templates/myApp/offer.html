@@ -1,0 +1,39 @@
+<html>
+{% load staticfiles %}
+    <header>
+        <a href="/myApp/">NewBeginnings</a> 
+        <title> Offer </title>
+    </header>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'myApp/offer.css' %}">
+
+    {% block body %}
+    <div class="row">
+        <div class="col-sm-12 col-md-7">
+             <div class="panel panel-default">
+                <div class="panel-body">
+                    <b><h3 id="offertxt">Offers</h3></b>
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <h4>Exchange/Purchase</h4>
+                    <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% include 'myApp/form.html' %}
+                        <input type="hidden" name="item" value="{{ request.GET.post }}">
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-3">
+                                <button type="submit" class="btn btn-block btn-success">Offer</button>
+                            </div>
+                            <div class="col-sm-3">
+                                <a href="{% url 'myApp:index' %}?post={{ request.GET.post }}" class="btn btn-block btn-warning">Cancel</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+             </div>
+        </div>
+    </div>
+    {% endblock %}
+</html>

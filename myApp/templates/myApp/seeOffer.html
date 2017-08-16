@@ -1,0 +1,61 @@
+<html>
+{% load static %}
+    <header>
+        <a href="/myApp/">NewBeginnings</a> 
+        <title> Offer </title>
+    </header>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'myApp/offer.css' %}">
+
+{% block body %}
+<body class="body" style="background-color:#f6f6f6">
+
+    <br/>
+    <br/>
+
+<div class="container">
+
+{#    {% if all_items %}#}
+{#        {% for item in all_items %}#}
+    {% if offers_list %}
+        {% for offer in offers_list %}
+          <div class="col-md-2" style="border: 1px solid #e2e2e2; padding: 5px;">
+                {% if offer.itemO %}
+                    <div class="thumbnail">
+                        <img src="{{item.image.url}}" class="img-thumbnail" />
+                         <div class="caption">
+
+                            <p>{{ offer.item2.condition }}<br/><b>Type: {{ offer.item2.type1 }}</b></p>
+                         </div>
+                     </div>
+                {% endif %}
+
+                <p><b>Money: </b> Php. {{ offer.bid }}</p>
+                <p><b>Message: </b> {{ offer.reason }}</p>
+                <h6><b>Offered By: </b><a href="/myApp/user/{{ offer.userOffer.id }}">{{ offer.userOffer.username }}</a></h6>
+                {% if offer.accept == False and offer.reject == False %}
+                   <a href="/myApp/view/accept/?offer={{ offer.id }}" class="btn btn-success">Accept</a>
+                   <a href="/myApp/view/reject/?offer={{ offer.id }}" class="btn btn-warning">Reject</a>
+                {% elif offer.accept == True %}
+                    <p><b> Response: </b>Approved</p>
+                    <a href="/myApp/view/reject/?offer={{ offer.id }}" class="btn btn-warning">Reject</a>
+                {% else %}
+                    <p> <b>Response: </b>Rejected </p>
+                    <a href="/myApp/view/accept/?offer={{ offer.id }}" class="btn btn-success">Accept</a>
+                {% endif %}
+          </div>
+        {% endfor %}
+
+    {% else %}
+        <p>No offers available</p>
+
+    {% endif %}
+
+</div>
+
+</body>
+
+{% endblock %}
+
+</html>

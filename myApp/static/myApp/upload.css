@@ -1,0 +1,43 @@
+header {
+    background-color: #ECF0F1;
+    color: #34495E;
+    height: 10%;
+    align-items: center;
+    display: flex;
+    font-size: 25pt;
+    font-family: Futura;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding-left: 41.5%;
+    font-weight: bold;
+    border-style: 2px solid;
+    border-bottom-style: ridge;
+    background-image: url(/myApp/);
+    
+}
+
+
+body{
+    background-color: #D0D3D4;
+}
+
+#item_name{
+    
+}
+
+#container-fluid{
+    position: relative;
+    left: 36.5%;
+}
+
+#login{
+    top: 20%;
+    position: relative;
+    float: left;
+    align-items: middle;
+    margin: auto;
+}
+
+

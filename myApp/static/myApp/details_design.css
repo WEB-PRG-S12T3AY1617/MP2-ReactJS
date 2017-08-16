@@ -1,6 +1,6 @@
 header {
-    background-color: #AED6F1;
-    color: white;
+    background-color: #ECF0F1;
+    text-decoration: none;
     height: 10%;
     align-items: center;
     display: flex;
@@ -14,16 +14,22 @@ header {
     font-weight: bold;
     border-style: 2px solid;
     border-bottom-style: ridge;  
+    background-image: url(/myApp/);
 }
 
+.test{
+    color: #34495E;
+    text-decoration: underline;
+}
+
+.test: visited{
+    color: #707B7C;
+}
 body{
-    background-image: url(Images/wallpaper.jpg);
+    background-color: #D0D3D4;
 }
 
-a{
-    border-bottom: 1px solid black;
-    color: dimgray;
-}
+
 #logo{
     height: 60px;
     width: 60px;
@@ -34,13 +40,12 @@ a{
 #post_container{
     width: 375px;
     height: 470px;
-    background-color: black;
+    background-color: white;
     display: inline-block;
     position: relative;
     top: 100;
     right: 50;
     margin: 5px;
-    border: 1px solid #ccc;
     float: left;
     border-radius: 10px;
     padding: 10px;
@@ -51,27 +56,27 @@ a{
     width: 335px;
     padding-right: 15px;
     padding-left: 15px;
-    border-left: 5px solid black;
-    border-right: 5px solid black;
+    border-left: 5px solid white;
+    border-right: 5px solid white;
 }
 
 #item_name{
     font-size: 17pt;
-    font-style: italic;
-    font-family: Futura;
+    font-family: Helvetica;
     padding-top: 5px;
     padding-bottom: 5px;
-    color: white;
+    color: black;
 }
 
 #tags{
     font-size: 14pt;
     font-style: oblique;
     color: white;
+    font-family: Helvetica;
 }
 
 #recent{
-    font-family: Futura;
+    font-family: Helvetica;
     position: relative;
     top: 12%;
     left: 3%;
@@ -82,17 +87,89 @@ a{
 }
 
 #details{
-    color: white;
+    color: black;
     font-size: 16pt;
+    font-family: Helvetica;
 }
 
 select:hover {
     color: dimgray;
 }
 
-#back{
+.makeOfferbtn {
+    background-color: #2E4053;
+    display: block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 4px 6px;
+    transition: 0.3s;
+    font-size: 20px;
+    font-family: Helvetica;
+    color: white;
+    bottom: 0;
+    left: 0;
     position: relative;
-    top: 75;
-    color: black;
-    font-size: 20pt;
+    padding-top: 3px;
+    border-radius: 3px;
+    text-align: center;
+    border-top: 1px;
+    vertical-align: middle;
+    z-index: 1000;
 }
+
+#makeOfferDrop {
+    position: absolute;
+    background-color: #34495E
+    width: 100px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.push {
+    position: fixed;
+    left: 50%;
+}
+
+#oLay {
+    position: absolute;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.7);;
+    top: 150;
+    left: 80;
+    bottom: 150;
+    right: 80;
+    align-items: center;
+}
+
+#textfield {
+    position: absolute;
+    top: 40%;
+    left: 25%
+}
+
+#submitbtn {
+    position: absolute;
+    top: 50%;
+    left: 40%;   
+}
+
+#offerbtn {
+    position: absolute;
+    font-size: 11pt;
+    background-color: #34495E;
+    display: block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 2px 4px;
+    transition-duration: 0.3s;
+    font-family: Helvetica;
+    color: white;
+    padding-top: 4px;
+    border-radius: 3px;
+    text-align: center;
+    right: 8px;
+    bottom: 8px;
+}
+

@@ -1,0 +1,25 @@
+header {
+    background-color: #ECF0F1;
+    color: #34495E;
+    height: 10%;
+    align-items: center;
+    display: flex;
+    font-size: 25pt;
+    font-family: Futura;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding-left: 41.5%;
+    font-weight: bold;
+    border-style: 2px solid;
+    border-bottom-style: ridge;
+    background-image: url(/myApp/);
+    
+}
+
+.container {
+    position: absolute;
+    align-items: center;
+    top: 20%;
+}

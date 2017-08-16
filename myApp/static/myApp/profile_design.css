@@ -1,6 +1,6 @@
 header {
-    background-color: #AED6F1;
-    color: white;
+    background-color: #ECF0F1;
+    color: #707B7C;
     height: 10%;
     align-items: center;
     display: flex;
@@ -14,16 +14,18 @@ header {
     font-weight: bold;
     border-style: 2px solid;
     border-bottom-style: ridge;  
+    background-image: url(/myApp/);
 }
 
 body{
-     background-image: url("Images/wallpaper.jpg");   
+    background-color: #D0D3D4;
 }
 
-a{
-    border-bottom: 1px solid black;
-    color: dimgray;
+.test{
+    color: #34495E;
+    text-decoration: underline;
 }
+
 
 #logo{
     height: 60px;
@@ -35,33 +37,33 @@ a{
 
 #profile{
     height: 15%;
-    background-color: black;
+    background-color: white;
     position: relative;
     top: 10.5%;
     align-items: center;
-    color: white;
    
 }
 
 #name{
-    font-family: Futura;
+    font-family: Helvetica;
     font-size: 23pt;
     padding-left: 7.5%;
     padding-top: 1%;
-    color: white;
+    color: black;
 }
 
 #degorofc{
-    font-family: Futura;
+    font-family: Helvetica;
     font-size: 16pt;
     padding-left: 7.5%;
-    color: white;
+    color: black;
 }
 
 #post_container{
+    
     width: 225px;
     height: 275px;
-    background-color: black;
+    background-color: white;
     display: inline-block;
     position: relative;
     bottom: 150;
@@ -69,7 +71,7 @@ a{
     margin: 5px;
     border: 1px solid #ccc;
     float: left;
-    border-radius: 18px;
+    border-radius: 14px;
     padding: 3px;
 }
 
@@ -78,8 +80,8 @@ a{
     width: 180px;
     padding-right: 15px;
     padding-left: 15px;
-    border-left: 5px solid black;
-    border-right: 5px solid black;
+    border-left: 5px solid white;
+    border-right: 5px solid white;
 }
 
 #item_name{
@@ -87,14 +89,13 @@ a{
     font-family: Futura;
     padding-top: 5px;
     padding-bottom: 5px;
-    color: white;
+    color: black;
     
 }
 
 #tags{
     font-size: 14pt;
-    font-style: oblique;
-     color: white;
+     color: black;
 }
 
 
@@ -125,7 +126,7 @@ a{
 }
 
 #posts{
-    top: 30%;
+    top: 37.5%;
     position: relative;
 }
 
@@ -134,14 +135,21 @@ a{
     position: relative;
 }
 
-#back{
-    position: relative;
-    top: 68;
-    color: black;
-    font-size: 20pt;
+#seeOffer{
+    position: absolute;
+    font-size: 11.5pt;
+    background-color: #34495E;
+    display: block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 8px 10px;
+    transition-duration: 0.3s;
+    font-family: Helvetica;
+    color: white;
+    padding-top: 5px;
+    border-radius: 3px;
+    text-align: center;
+    right: 20px;
+    top: 140px;
 }
-
-
-
-
-

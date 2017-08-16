@@ -3,19 +3,18 @@
     <script src="{% static 'myApp/profile.js' %}"> </script>
     <link rel="stylesheet" type="text/css" href="{% static 'myApp/profile_design.css' %}"/>
     <link rel="icon" href="{% static 'myApp/logo.png' %}" type="image/ico">
-     <header> <img src="{% static 'myApp/images/logo.png' %}" id="logo"> PigeonBox </header>
+    <header> <a href="/myApp/" class="test"> NewBeginnings </a> </header>
     <body>
        {% load staticfiles %}
        
-       <div id="back">
-           <a href="javascript:history.back()"> ⏎ Back </a> 
-       </div>
-       <div id="profile">
-           <div id="name">  {{user.name}} </div>
-           <div id="degorofc"> <i> {{user.Degree_Program_or_Office}} </i> </div>
-       </div> 
+        <div id="profile">
+            <div id="name">  {{user.username}} </div>
+            <div id="degorofc"> <i> {{user.Degree_Program_or_Office}} </i> </div>
+        </div> 
         
-        <p id="recent"> Recent Posts </p>
+        <div id="offercontainer">
+            <a href="/myApp/user/{{user.pk}}/seeOffer/" id="seeOffer">See offers</a>
+        </div>
         
         <div id= "posts">
         {% for post in  post|slice:":5" %}

@@ -1,26 +1,31 @@
 <html>
     {% load static %}
+    <script src="{% static 'myApp/details.js' %}"> </script>
     <link rel="stylesheet" type="text/css" href="{% static 'myApp/details_design.css' %}"/>
     <link rel="icon" href="{% static 'myApp/logo.png' %}" type="image/ico">
-    <header> <img src="{% static 'myApp/Images/logo.png' %}" id="logo"> PigeonBox </header>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+    <head>
+        
+    </head>
+    <header> 
+        <a href="/myApp/" class="test"> NewBeginnings </a>
+    </header>
     <body>
-        <div id="back">
-              <a href="javascript:history.back()"> ⏎ Back </a>
-        </div>
-      
         <div class='main' style="width:280px; margin:0 auto;">
             <div id="post_container">
-            <div id="item_name">{{item.item_name}} </div>
-            <div id="thumbnail"> <img src="{{item.image.url}}" type="image/ico"></div>
-            <div id="tags"> Tags: {{item.tags}} </div>
-            <div id="details">
-                <div> Quantity:{{item.quantity}}</div>
-                <div> Condition: <a href="filter/condition/{{item.condition}}"> {{item.condition}}</a>/10</div>
-                <div> Type: <a href="filter/type/{{item.type1}}"> {{item.get_type1_display}} </a></div>
-                <div id="username"> by <a href="user/{{item.username.pk}}"> {{item.username}} </a></div>
+                <div id="item_name">{{item.item_name}} </div>
+                <div id="thumbnail"> <img src="{{item.image.url}}" type="image/ico"></div>
+                <div id="tags"> Tags: {{item.tags}} </div>
+                <div id="details">
+                    <div> Quantity: {{item.quantity}}</div>
+                    <div> Condition: <a href="filter/condition/{{item.condition}}" class="test"> {{item.condition}}</a>/10</div>
+                    <div> Type: <a href="filter/type/{{item.type1}}" class="test"> {{item.get_type1_display}} </a></div>
+                    <div id="username"> by <a href="user/{{item.username.pk}}" class="test"> {{item.username}} </a></div>
+                    <div id="makeOffer">
+                        <a href="myApp/offer/?post={{item.pk}}" class="btn btn-block btn-primary" id="offerbtn">Make an offer</a>
+                    </div>
+                </div>
             </div>
-        
-        </div>
         </div>
     </body>
     
